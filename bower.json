@@ -1,0 +1,16 @@
+{
+  "name": "drive-or-fly",
+  "version": "0.0.1",
+  "homepage": "https://github.com/atheiman/drive-or-fly",
+  "authors": [
+    "Austin Heiman <atheimanksu@gmail.com>"
+  ],
+  "description": "Displays driving details and flight options for a given location and destination.",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-resource": "1.4.x",
+    "bootstrap": "3.3.x",
+    "jquery": "2.1.x"
+  }
+}
