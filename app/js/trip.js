@@ -1,7 +1,7 @@
 angular.module('trip', [])
 
-.factory('googleMapsService', ['$http', '$rootScope', '$timeout', 'GMAPS_KEY',
-  function($http, $rootScope, $timeout, GMAPS_KEY){
+.factory('googleMapsService', ['$http', '$rootScope', '$timeout',
+  function($http, $rootScope, $timeout){
     // Used to query Google Maps API
     var data = {
       origin: {},
