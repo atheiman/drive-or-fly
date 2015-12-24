@@ -5,15 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Drive Or Fly</title>
+  <title>Drive Or Fly?</title>
 
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+        crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
 
   <script src="js/drive-or-fly.js"></script>
   <script src="js/private.js"></script>
@@ -26,12 +34,23 @@
   <div class="container">
     <h1>Drive or Fly</h1>
 
-    <p ng-controller="TripCtrl">
-      <code>{{something}}</code><br/>
-      Origin: <input type="text" ng-model="origin"/><br/>
-      Destination: <input type="text" ng-model="destination"/><br/>
-      <button ng-click="callGetDistance()">callgetdistance</button>
-    </p>
+    <div ng-controller="TripCtrl">
+      <p><form novalidate class="form-inline">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Origin"
+                 ng-model="origin" />
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Destination"
+                 ng-model="destination" />
+        </div>
+        <button type="submit" class="btn btn-primary"
+                ng-click="callGetDistance()">Calculate</button>
+      </form></p>
+      <p><pre style="font-size:.6em;">mapsData = {{mapsData}}</pre></p>
+    </div>
+
+    <p id="map" style="height:300px;"></p>
   </div>
 </body>
 </html>
